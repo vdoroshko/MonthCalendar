@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2016 Vitaly Doroshko <vdoroshko@mail.ru>
- * You may use this code under the terms of the BSD 3-Clause license
+ * You may use this code under the terms of the BSD 3-clause license
  */
 
 var Calendar = function (year, month, firstDayOfWeek) {
@@ -29,14 +29,14 @@ var Calendar = function (year, month, firstDayOfWeek) {
 };
 
 Calendar.prototype.fetchRow = function () {
-    if (this.firstDayOfWeekDate > this.lastDayDate) {
+    if (this.iterationDate > this.lastDayDate) {
         return null;
     }
 
     var row = [];
     for (var i = 0; i < 7; i++) {
-        row.push(new Date(this.firstDayOfWeekDate.getTime()));
-        this.firstDayOfWeekDate.setDate(this.firstDayOfWeekDate.getDate() + 1);
+        row.push(new Date(this.iterationDate.getTime()));
+        this.iterationDate.setDate(this.iterationDate.getDate() + 1);
     }
 
     return row;
@@ -78,7 +78,7 @@ Calendar.prototype.setFirstDayOfWeek = function (firstDayOfWeek) {
     this.lastDayDate = new Date(this.firstDayDate.getTime());
     this.lastDayDate.setDate(this.firstDayDate.getDate() + 41);
 
-    this.firstDayOfWeekDate = new Date(this.firstDayDate.getTime());
+    this.iterationDate = new Date(this.firstDayDate.getTime());
 };
 
 Calendar.prototype.getFirstDay = function () {
