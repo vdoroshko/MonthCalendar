@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Vitaly Doroshko <vdoroshko@mail.ru>
+ * Copyright 2016 Vitaly Doroshko <vdoroshko@mail.ru>
  * You may use this code under the terms of the BSD 3-clause license
  */
 
