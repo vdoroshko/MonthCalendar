@@ -107,18 +107,15 @@ Calendar.prototype.setFirstDayOfWeek = function (firstDayOfWeek) {
 
     this.firstDayOfWeek = firstDayOfWeek;
 
-    var firstSundayDate = new Date(this.firstDayOfMonthDate.getTime());
-    firstSundayDate.setDate(this.firstDayOfMonthDate.getDate() - this.firstDayOfMonthDate.getDay());
-
-    this.firstDayDate = new Date(firstSundayDate.getTime());
-    this.firstDayDate.setDate(firstSundayDate.getDate() + this.firstDayOfWeek);
+    this.firstDayDate = new Date(this.firstDayOfMonthDate.getTime());
+    this.firstDayDate.setDate(this.firstDayDate.getDate() - this.firstDayDate.getDay() + this.firstDayOfWeek);
 
     if (this.firstDayDate > this.firstDayOfMonthDate) {
         this.firstDayDate.setDate(this.firstDayDate.getDate() - 7);
     }
 
     this.lastDayDate = new Date(this.firstDayDate.getTime());
-    this.lastDayDate.setDate(this.firstDayDate.getDate() + 41);
+    this.lastDayDate.setDate(this.lastDayDate.getDate() + 41);
 
     this.iterationDate = new Date(this.firstDayDate.getTime());
 };
