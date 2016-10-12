@@ -17,7 +17,7 @@ var Calendar = function (year, month, firstDayOfWeek) {
     }
 
     this.firstDayOfMonthDate = new Date(year, month);
-    if (isNaN(this.firstDayOfMonthDate)) {
+    if (isNaN(this.firstDayOfMonthDate) || isNaN(new Date(year, month + 1))) {
         throw new RangeError("year and month arguments results in an invalid combination");
     }
 
@@ -55,7 +55,12 @@ Calendar.prototype.getFirstDayOfNextMonth = function () {
 };
 
 Calendar.prototype.getFirstDayOfPreviousMonth = function () {
-    return new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth() - 1, 1);
+    var firstDayOfPreviousMonthDate = new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth() - 1, 1);
+    if (isNaN(firstDayOfPreviousMonthDate)) {
+        return null;
+    }
+
+    return firstDayOfPreviousMonthDate;
 };
 
 Calendar.prototype.getFirstDayOfWeek = function () {
@@ -75,7 +80,12 @@ Calendar.prototype.getLastDayOfMonth = function () {
 };
 
 Calendar.prototype.getLastDayOfNextMonth = function () {
-    return new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth() + 2, 0);
+    var lastDayOfNextMonthDate = new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth() + 2, 0);
+    if (isNaN(lastDayOfNextMonthDate)) {
+        return null;
+    }
+
+    return lastDayOfNextMonthDate;
 };
 
 Calendar.prototype.getLastDayOfPreviousMonth = function () {
