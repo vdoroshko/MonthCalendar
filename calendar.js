@@ -16,8 +16,9 @@ var Calendar = function (year, month, firstDayOfWeek) {
         throw new TypeError("month argument must be a number");
     }
 
-    this.firstDayOfMonthDate = new Date(year, month);
-    if (isNaN(this.firstDayOfMonthDate) || isNaN(new Date(year, month + 1))) {
+    this.firstDateOfMonth = new Date(year, month);
+
+    if (isNaN(this.firstDateOfMonth) || isNaN(new Date(year, month + 1))) {
         throw new RangeError("year and month arguments results in an invalid combination");
     }
 
@@ -29,11 +30,12 @@ var Calendar = function (year, month, firstDayOfWeek) {
 };
 
 Calendar.prototype.fetchRow = function () {
-    if (this.iterationDate > this.lastDayDate) {
+    if (this.iterationDate > this.lastDate) {
         return null;
     }
 
     var row = [];
+
     for (var i = 0; i < 7; i++) {
         row.push(new Date(this.iterationDate.getTime()));
         this.iterationDate.setDate(this.iterationDate.getDate() + 1);
@@ -42,25 +44,26 @@ Calendar.prototype.fetchRow = function () {
     return row;
 };
 
-Calendar.prototype.getFirstDay = function () {
-    return this.firstDayDate;
+Calendar.prototype.getFirstDate = function () {
+    return this.firstDate;
 };
 
-Calendar.prototype.getFirstDayOfMonth = function () {
-    return this.firstDayOfMonthDate;
+Calendar.prototype.getFirstDateOfMonth = function () {
+    return this.firstDateOfMonth;
 };
 
-Calendar.prototype.getFirstDayOfNextMonth = function () {
-    return new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth() + 1, 1);
+Calendar.prototype.getFirstDateOfNextMonth = function () {
+    return new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth() + 1, 1);
 };
 
-Calendar.prototype.getFirstDayOfPreviousMonth = function () {
-    var firstDayOfPreviousMonthDate = new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth() - 1, 1);
-    if (isNaN(firstDayOfPreviousMonthDate)) {
+Calendar.prototype.getFirstDateOfPreviousMonth = function () {
+    var firstDateOfPreviousMonth = new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth() - 1, 1);
+
+    if (isNaN(firstDateOfPreviousMonth)) {
         return null;
     }
 
-    return firstDayOfPreviousMonthDate;
+    return firstDateOfPreviousMonth;
 };
 
 Calendar.prototype.getFirstDayOfWeek = function () {
@@ -68,32 +71,33 @@ Calendar.prototype.getFirstDayOfWeek = function () {
 };
 
 Calendar.prototype.getFullYear = function () {
-    return this.firstDayOfMonthDate.getFullYear();
+    return this.firstDateOfMonth.getFullYear();
 };
 
-Calendar.prototype.getLastDay = function () {
-    return this.lastDayDate;
+Calendar.prototype.getLastDate = function () {
+    return this.lastDate;
 };
 
-Calendar.prototype.getLastDayOfMonth = function () {
-    return new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth() + 1, 0);
+Calendar.prototype.getLastDateOfMonth = function () {
+    return new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth() + 1, 0);
 };
 
-Calendar.prototype.getLastDayOfNextMonth = function () {
-    var lastDayOfNextMonthDate = new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth() + 2, 0);
-    if (isNaN(lastDayOfNextMonthDate)) {
+Calendar.prototype.getLastDateOfNextMonth = function () {
+    var lastDateOfNextMonth = new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth() + 2, 0);
+
+    if (isNaN(lastDateOfNextMonth)) {
         return null;
     }
 
-    return lastDayOfNextMonthDate;
+    return lastDateOfNextMonth;
 };
 
-Calendar.prototype.getLastDayOfPreviousMonth = function () {
-    return new Date(this.firstDayOfMonthDate.getFullYear(), this.firstDayOfMonthDate.getMonth(), 0);
+Calendar.prototype.getLastDateOfPreviousMonth = function () {
+    return new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth(), 0);
 };
 
 Calendar.prototype.getMonth = function () {
-    return this.firstDayOfMonthDate.getMonth();
+    return this.firstDateOfMonth.getMonth();
 };
 
 Calendar.prototype.setFirstDayOfWeek = function (firstDayOfWeek) {
@@ -107,15 +111,15 @@ Calendar.prototype.setFirstDayOfWeek = function (firstDayOfWeek) {
 
     this.firstDayOfWeek = firstDayOfWeek;
 
-    this.firstDayDate = new Date(this.firstDayOfMonthDate.getTime());
-    this.firstDayDate.setDate(this.firstDayDate.getDate() - this.firstDayDate.getDay() + this.firstDayOfWeek);
+    this.firstDate = new Date(this.firstDateOfMonth.getTime());
+    this.firstDate.setDate(this.firstDate.getDate() - this.firstDate.getDay() + this.firstDayOfWeek);
 
-    if (this.firstDayDate > this.firstDayOfMonthDate) {
-        this.firstDayDate.setDate(this.firstDayDate.getDate() - 7);
+    if (this.firstDate > this.firstDateOfMonth) {
+        this.firstDate.setDate(this.firstDate.getDate() - 7);
     }
 
-    this.lastDayDate = new Date(this.firstDayDate.getTime());
-    this.lastDayDate.setDate(this.lastDayDate.getDate() + 41);
+    this.lastDate = new Date(this.firstDate.getTime());
+    this.lastDate.setDate(this.lastDate.getDate() + 41);
 
-    this.iterationDate = new Date(this.firstDayDate.getTime());
+    this.iterationDate = new Date(this.firstDate.getTime());
 };
