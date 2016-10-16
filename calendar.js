@@ -135,7 +135,7 @@ Calendar.prototype.setFirstDayOfWeek = function (firstDayOfWeek) {
         throw new RangeError("firstDayOfWeek argument must be between 0 and 6");
     }
 
-    this.firstDayOfWeek = new Number(firstDayOfWeek);
+    this.firstDayOfWeek = Number(firstDayOfWeek);
 
     this.firstDate = new Date(this.firstDateOfMonth.getTime());
     this.firstDate.setDate(this.firstDate.getDate() - this.firstDate.getDay() + this.firstDayOfWeek);
