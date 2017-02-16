@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, Vitaly Doroshko <vdoroshko@mail.ru>
+ * Copyright (c) 2017, Vitaly Doroshko <vdoroshko@mail.ru>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -61,7 +61,6 @@ Calendar.prototype.fetchRow = function () {
     }
 
     var row = [];
-
     for (var i = 0; i < 7; i++) {
         row.push(new Date(this.iterationDate.getTime()));
         this.iterationDate.setDate(this.iterationDate.getDate() + 1);
@@ -79,11 +78,11 @@ Calendar.prototype.getFirstDateOfMonth = function () {
 };
 
 Calendar.prototype.getFirstDateOfNextMonth = function () {
-    return new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth() + 1, 1);
+    return new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth() + 1);
 };
 
 Calendar.prototype.getFirstDateOfPreviousMonth = function () {
-    var firstDateOfPreviousMonth = new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth() - 1, 1);
+    var firstDateOfPreviousMonth = new Date(this.firstDateOfMonth.getFullYear(), this.firstDateOfMonth.getMonth() - 1);
 
     if (isNaN(firstDateOfPreviousMonth)) {
         return null;
