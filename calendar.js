@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017, Vitaly Doroshko <vdoroshko@mail.ru>
+ * Copyright (c) 2016, 2017, Vitaly Doroshko <vdoroshko@mail.ru>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -61,6 +61,7 @@ Calendar.prototype.fetchRow = function () {
     }
 
     var row = [];
+
     for (var i = 0; i < 7; i++) {
         row.push(new Date(this.iterationDate.getTime()));
         this.iterationDate.setDate(this.iterationDate.getDate() + 1);
