@@ -1,4 +1,4 @@
-# calendar
+# Monthcalendar
 
 Provides support for generating month calendars.
 
