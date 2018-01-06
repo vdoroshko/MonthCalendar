@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2018, Vitaly Doroshko <vdoroshko@mail.ru>
+ * Copyright (c) 2016-2018 Vitaly Doroshko.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
