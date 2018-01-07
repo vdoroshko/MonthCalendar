@@ -4,7 +4,7 @@ The **MonthCalendar** object provides support for generating month calendars.
 
 ## Usage Example
 
-Generate arrays of weeks containing Date objects for the current month of the year:
+Fetch arrays of weeks containing Date objects for the current month of the year:
 
 ```JavaScript
 var currentDate = new Date;
