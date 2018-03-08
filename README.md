@@ -60,22 +60,27 @@ new MonthCalendar(<i>year</i>, <i>month</i>[, <i>firstDayOfWeek</i>]);
 ### Parameters
 
 <dl>
-  <dt>
-    <code>date</code>
-  </dt>
+  <dt>date</dt>
   <dd>A <code>Date</code> object.</dd>
-  <dt>
-    <code>year</code>
-  </dt>
+  <dt>year</dt>
   <dd>Integer value representing the year. Values from 0 to 99 map to the years 1900 to 1999.</dd>
-  <dt>
-    <code>month</code>
-  </dt>
+  <dt>month</dt>
   <dd>Integer value representing the month, beginning with 0 for January to 11 for December.</dd>
-  <dt>
-    <code>firstDayOfWeek</code>
-  </dt>
+  <dt>firstDayOfWeek</dt>
   <dd>Optional. Integer value representing the first day of the week, beginning with 0 for Sunday to 6 for Saturday.</dd>
+</dl>
+
+### Return Value
+
+A new <code>MonthCalendar</code> object.
+
+### Exceptions
+
+<dl>
+  <dt>TypeError</dt>
+  <dd>Thrown if the <code>year</code> or <code>month</code> is not a number type.</dd>
+  <dt>RangeError</dt>
+  <dd>Thrown if year and month arguments results in an invalid combination.</dd>
 </dl>
 
 ## Methods
