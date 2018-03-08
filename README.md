@@ -80,7 +80,7 @@ A new <code>MonthCalendar</code> object.
 > Thrown if the <code>year</code> or <code>month</code> or <code>firstDayOfWeek</code> parameters are not a number type.</dd>
 
 **RangeError**
-> Thrown if the <code>year</code> and <code>month</code> parameters results in an invalid combination.<br>
+> Thrown if the <code>year</code> and <code>month</code> parameters results in an invalid combination.
 
 > Thrown if the <code>firstDayOfWeek</code> parameter is out of range of valid values (0&ndash;6).
 
