@@ -54,8 +54,29 @@ Will output:
 <pre>
 new MonthCalendar();
 new MonthCalendar(<i>date</i>);
-new MonthCalendar(<i>year</i>, <i>month</i> [, <i>firstDayOfWeek</i>]);
+new MonthCalendar(<i>year</i>, <i>month</i>[, <i>firstDayOfWeek</i>]);
 </pre>
+
+### Parameters
+
+<dl>
+  <dt>
+    <code>date</code>
+  </dt>
+  <dd>Date object.</dd>
+  <dt>
+    <code>year</code>
+  </dt>
+  <dd>Integer value representing the year. Values from 0 to 99 map to the years 1900 to 1999.</dd>
+  <dt>
+    <code>month</code>
+  </dt>
+  <dd>Integer value representing the month, beginning with 0 for January to 11 for December.</dd>
+  <dt>
+    <code>firstDayOfWeek</code>
+  </dt>
+  <dd>Optional. Integer value representing the first day of the week, beginning with 0 for Sunday to 6 for Saturday.</dd>
+</dl>
 
 ## Methods
 
