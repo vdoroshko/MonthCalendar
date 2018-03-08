@@ -78,10 +78,14 @@ A new <code>MonthCalendar</code> object.
 
 <dl>
   <dt>TypeError</dt>
-  <dd>Thrown if the <code>year</code>, <code>month</code> or <code>firstDayOfWeek</code> parameters is not a number type.</dd>
+  <dd>Thrown if the <code>year</code> or <code>month</code> or <code>firstDayOfWeek</code> parameters are not a number type.</dd>
   <dt>RangeError</dt>
-  <dd>Thrown if <code>year</code> and <code>month</code> parameters results in an invalid combination.</dd>
-  <dd>Thrown if <code>firstDayOfWeek</code> parameter not between 0 and 6.</dd>
+  <dd>
+    <ul>
+      <li>Thrown if <code>year</code> and <code>month</code> parameters results in an invalid combination.</li>
+      <li>Thrown if <code>firstDayOfWeek</code> parameter is out of range of valid values (0&ndash;6).</li>
+    </ul>
+  </dd>
 </dl>
 
 ## Methods
