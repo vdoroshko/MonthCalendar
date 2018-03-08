@@ -63,7 +63,7 @@ new MonthCalendar(<i>year</i>, <i>month</i>[, <i>firstDayOfWeek</i>]);
   <dt>
     <code>date</code>
   </dt>
-  <dd>Date object.</dd>
+  <dd>A <code>Date</code> object.</dd>
   <dt>
     <code>year</code>
   </dt>
