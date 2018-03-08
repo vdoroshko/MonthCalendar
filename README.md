@@ -51,8 +51,11 @@ Will output:
 
 ## Syntax
 
-<span style="color: #d73a49;">new MonthCalendar</span>();
+<pre>
+new MonthCalendar();
 new MonthCalendar(<i>date</i>);
+new MonthCalendar(<i>year</i>, <i>month</i> [, <i>firstDayOfWeek</i>]);
+</pre>
 
 ## Methods
 
