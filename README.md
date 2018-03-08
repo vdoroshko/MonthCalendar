@@ -49,6 +49,17 @@ Will output:
 ] (7)
 ```
 
+## Syntax
+
+<div class="highlight highlight-source-js">
+<pre>
+<span class="pl-k">new</span> <span class="pl-en">MonthCalendar</span>();</code>
+new MonthCalendar(<i>date</i>);
+</pre>
+</div>
+
+## Methods
+
 ## Browser Support
 
 * Chrome
