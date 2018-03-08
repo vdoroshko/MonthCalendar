@@ -81,8 +81,8 @@ A new <code>MonthCalendar</code> object.
   <dd>Thrown if the <code>year</code> or <code>month</code> or <code>firstDayOfWeek</code> parameters are not a number type.</dd>
   <dt>RangeError</dt>
   <dd>
-    <p>Thrown if <code>year</code> and <code>month</code> parameters results in an invalid combination.</p>
-    <p>Thrown if <code>firstDayOfWeek</code> parameter is out of range of valid values (0&ndash;6).</p>
+    Thrown if the <code>year</code> and <code>month</code> parameters results in an invalid combination.<br>
+    Thrown if the <code>firstDayOfWeek</code> parameter is out of range of valid values (0&ndash;6).
   </dd>
 </dl>
 
