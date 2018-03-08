@@ -51,12 +51,8 @@ Will output:
 
 ## Syntax
 
-<div class="highlight highlight-source-js">
-<pre>
-<span class="pl-k">new</span> <span class="pl-en">MonthCalendar</span>();</code>
+<span style="color: #d73a49;">new MonthCalendar</span>();
 new MonthCalendar(<i>date</i>);
-</pre>
-</div>
 
 ## Methods
 
