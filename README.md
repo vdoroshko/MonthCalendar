@@ -61,13 +61,21 @@ new MonthCalendar(<i>year</i>, <i>month</i>[, <i>firstDayOfWeek</i>]);
 
 <dl>
   <dt>date</dt>
-  <dd>A <code>Date</code> object.</dd>
+  <dd>
+    <p>A <code>Date</code> object.</p>
+  </dd>
   <dt>year</dt>
-  <dd>Integer value representing the year. Values from 0 to 99 map to the years 1900 to 1999.</dd>
+  <dd>
+    <p>Integer value representing the year. Values from 0 to 99 map to the years 1900 to 1999.</p>
+  </dd>
   <dt>month</dt>
-  <dd>Integer value representing the month, beginning with 0 for January to 11 for December.</dd>
+  <dd>
+    <p>Integer value representing the month, beginning with 0 for January to 11 for December.</p>
+  </dd>
   <dt>firstDayOfWeek</dt>
-  <dd>Optional. Integer value representing the first day of the week, beginning with 0 for Sunday to 6 for Saturday.</dd>
+  <dd>
+    <p>Optional. Integer value representing the first day of the week, beginning with 0 for Sunday to 6 for Saturday.</p>
+  </dd>
 </dl>
 
 ### Return Value
@@ -76,15 +84,17 @@ A new <code>MonthCalendar</code> object.
 
 ### Exceptions
 
-**TypeError**
-
-Thrown if the <code>year</code> or <code>month</code> or <code>firstDayOfWeek</code> parameters are not a number type.</dd>
-
-**RangeError**
-
-Thrown if the <code>year</code> and <code>month</code> parameters results in an invalid combination.
-
-Thrown if the <code>firstDayOfWeek</code> parameter is out of range of valid values (0&ndash;6).
+<dl>
+  <dt>TypeError</dt>
+  <dd>
+    <p>Thrown if the <code>year</code> or <code>month</code> or <code>firstDayOfWeek</code> parameters are not a number type.</p>
+  </dd>
+  <dt>RangeError</dt>
+  <dd>
+    <p>Thrown if the <code>year</code> and <code>month</code> parameters results in an invalid combination.</p>
+    <p>Thrown if the <code>firstDayOfWeek</code> parameter is out of range of valid values (0&ndash;6).</p>
+  </dd>
+</dl>
 
 ## Methods
 
